@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G-6 Construction Co.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-o1wKXQaRf2pzL1CvDJklNkeTRJlfkQ7CZxDRjFeHgk+HNd6GnBqEoR8z6ZmA7iEAV1oH+vZVRL4SeA5IObU8xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --primary-color: #1e3a8a; /* Blue */
+      --accent-color: #f97316;  /* Orange */
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service {
+      background: white;
+      padding: 2rem;
+      border-left: 5px solid var(--accent-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .service h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .projects img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 0.75rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: var(--accent-color);
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+        display: none;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav").classList.toggle("active");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>BuildRight Co.</h1>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>G-6 Construction Co.</h2>
+    <p>Building Trust. Building Quality. Building the Future.</p>
+  </section>
+
+  <section id="services">
+    <h2 style="text-align:center; color: var(--primary-color); margin-bottom: 2rem;">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Building Construction</h3>
+        <p>From concept to completion, we deliver high-quality commercial and residential buildings.</p>
+      </div>
+      <div class="service">
+        <h3>Renovation</h3>
+        <p>Modernizing and improving existing spaces with top-notch craftsmanship and efficiency.</p>
+      </div>
+      <div class="service">
+        <h3>Interior Design</h3>
+        <p>Creative, functional, and aesthetically pleasing interiors tailored to your vision.</p>
+      </div>
+      <div class="service">
+        <h3>Consultation</h3>
+        <p>Expert guidance for your construction plans, budgeting, and compliance needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align:center; color: var(--primary-color); margin-bottom: 2rem;">Our Projects</h2>
+    <div class="projects">
+      <img src="https://via.placeholder.com/400x300?text=Project+1" alt="Project 1">
+      <img src="https://via.placeholder.com/400x300?text=Project+2" alt="Project 2">
+      <img src="https://via.placeholder.com/400x300?text=Project+3" alt="Project 3">
+      <img src="https://via.placeholder.com/400x300?text=Project+4" alt="Project 4">
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 style="text-align:center; color: var(--primary-color); margin-bottom: 2rem;">About Us</h2>
+    <p>
+      G-6 Construction Co. is a trusted name
